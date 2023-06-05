@@ -3,8 +3,8 @@ import os
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
 from dotenv import load_dotenv
+from selene import Browser, Config
 
 from utils import attach
 
@@ -46,7 +46,6 @@ def setup_browser(request):
         options=options
     )
     browser = Browser(Config(driver))
-
     yield browser
 
     attach.add_html(browser)
